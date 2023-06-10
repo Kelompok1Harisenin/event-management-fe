@@ -38,8 +38,8 @@ You may also see any lint errors in the console.
         - **src/config/** config folder
         - **src/pages/** pages folder
         - **src/routes/** routes folder
-        - **src/App.jsx/** main _.jsx_ App 
-        - **src/main.jsx/** main root _.jsx_
+        - **src/App.jsx** main _.jsx_ App 
+        - **src/main.jsx** main root _.jsx_
         - **src/config.js** app configuration
     - **index.html** call the _main.jsx_ file
 
