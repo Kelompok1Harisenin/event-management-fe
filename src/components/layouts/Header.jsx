@@ -2,7 +2,16 @@ import { useState } from "react";
 function Header(props) {
   return (
     <>
-      <h1>EVENT MANAGEMENT</h1>
+      <header>
+        <div className="header-logo">
+          EVENT MANAGEMENT
+        </div>
+        <div className="header-list">
+          <ul>
+            <li>list</li>
+          </ul>
+        </div>
+      </header>
     </>
   )
 }
