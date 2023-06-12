@@ -18,7 +18,7 @@ function Take1() {
     img={pic}
     icon={like}
     name="Session 1 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Tue, Jun 13, 07:00 PM + 173 more events"
+    date="Tue, Jun 13, 07:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -31,7 +31,7 @@ function Take2() {
     img={pic1}
     icon={like}
     name="Session 2 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Wed, Jun 14, 08:00 PM + 173 more events"
+    date="Wed, Jun 14, 08:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -44,7 +44,7 @@ function Take3() {
     img={pic2}
     icon={like}
     name="Session 3 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Thu, Jun 15, 09:00 PM + 173 more events"
+    date="Thu, Jun 15, 09:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -57,7 +57,7 @@ function Take4() {
     img={pic3}
     icon={like}
     name="Session 4 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Fri, Jun 16, 10:00 PM + 173 more events"
+    date="Fri, Jun 16, 10:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -70,7 +70,7 @@ function Take5() {
     img={pic4}
     icon={like}
     name="Session 5 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Tue, Jun 20, 07:00 PM + 173 more events"
+    date="Tue, Jun 20, 07:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -83,7 +83,7 @@ function Take6() {
     img={pic5}
     icon={like}
     name="Session 6 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Wed, Jun 21, 08:00 PM + 173 more events"
+    date="Wed, Jun 21, 08:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -96,7 +96,7 @@ function Take7() {
     img={pic6}
     icon={like}
     name="Session 7 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Thu, Jun 22, 09:00 PM + 173 more events"
+    date="Thu, Jun 22, 09:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
@@ -109,7 +109,7 @@ function Take8() {
     img={pic7}
     icon={like}
     name="Session 8 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
-    date="Fri, Jun 23, 10:00 PM + 173 more events"
+    date="Fri, Jun 23, 10:00 PM + 113 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
     note1="Kelompok Satu"
