@@ -17,12 +17,12 @@ function Take1() {
   return <EventCard
     img={pic}
     icon={like}
-    name="Session 1 - How to Improve Your Memory - Surabaya"
+    name="Session 1 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Tue, Jun 13, 07:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -30,12 +30,12 @@ function Take2() {
   return <EventCard
     img={pic1}
     icon={like}
-    name="Session 2 - How to Improve Your Memory - Surabaya"
+    name="Session 2 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Wed, Jun 14, 08:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -43,12 +43,12 @@ function Take3() {
   return <EventCard
     img={pic2}
     icon={like}
-    name="Session 3 - How to Improve Your Memory - Surabaya"
+    name="Session 3 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Thu, Jun 15, 09:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -56,12 +56,12 @@ function Take4() {
   return <EventCard
     img={pic3}
     icon={like}
-    name="Session 4 - How to Improve Your Memory - Surabaya"
+    name="Session 4 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Fri, Jun 16, 10:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -69,12 +69,12 @@ function Take5() {
   return <EventCard
     img={pic4}
     icon={like}
-    name="Session 5 - How to Improve Your Memory - Surabaya"
+    name="Session 5 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Tue, Jun 20, 07:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -82,12 +82,12 @@ function Take6() {
   return <EventCard
     img={pic5}
     icon={like}
-    name="Session 6 - How to Improve Your Memory - Surabaya"
+    name="Session 6 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Wed, Jun 21, 08:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -95,12 +95,12 @@ function Take7() {
   return <EventCard
     img={pic6}
     icon={like}
-    name="Session 7 - How to Improve Your Memory - Surabaya"
+    name="Session 7 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Thu, Jun 22, 09:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
@@ -108,12 +108,12 @@ function Take8() {
   return <EventCard
     img={pic7}
     icon={like}
-    name="Session 8 - How to Improve Your Memory - Surabaya"
+    name="Session 8 - Kelompok Satu HSBC Batch#7 - Full Stack Programer"
     date="Fri, Jun 23, 10:00 PM + 173 more events"
     place1="Surabaya • Surabaya, East Java"
     place2="Free"
-    note1="Iris Reading"
-    note2="👤 1.9k followers"
+    note1="Kelompok Satu"
+    note2="👤 7.7k followers"
   />
 }
 
