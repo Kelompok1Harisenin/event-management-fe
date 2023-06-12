@@ -1,6 +1,6 @@
 function EventCard(props) {
   return (
-    <div className='grid grid-cols-1 w-full border border-black my-10'>
+    <div className='grid grid-cols-1 w-full bg-white my-10 duration-200 delay-150 hover:shadow-2xl hover:delay-200'>
 
       <div className='relative col-span-1 w-full text-left'>
         <img src={props.img} alt="Event Pic" />
