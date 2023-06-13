@@ -1,5 +1,5 @@
 import './App.css';
-import EventCardChi from './EventCardChi';
+import EventCard from '../components/EventCard'
 
 import like from './img/like.png';
 
@@ -44,7 +44,7 @@ function RenderUlang() {
   ));
 }
 
-function EventCardPar() {
+function EventCard() {
   return (
     <div className='max-lg:grid-cols-3 max-lg:px-5 max-sm:grid-cols-2 max-sm:px-0 grid grid-cols-4 gap-5 px-10 bg-slate-100'>
       <RenderUlang />
@@ -52,4 +52,4 @@ function EventCardPar() {
   );
 }
 
-export default EventCardPar;
+export default EventCard;

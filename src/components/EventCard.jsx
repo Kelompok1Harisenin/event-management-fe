@@ -1,4 +1,4 @@
-function EventCardChi(props) {
+function EventCard(props) {
   return (
     <div className='grid grid-cols-1 w-full bg-white my-10 duration-200 delay-150 hover:shadow-2xl hover:delay-200'>
 
@@ -27,4 +27,4 @@ function EventCardChi(props) {
   )
 }
 
-export default EventCardChi;
+export default EventCard;
