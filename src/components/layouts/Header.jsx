@@ -1,25 +1,25 @@
 import { useState } from "react";
+
+
 function Header(props) {
   return (
     <>
-      <header>
-        <div className="header-logo">
-          EVENT MANAGEMENT
-        </div>
-        <div className="header-list">
-          <ul>
-            <li>Organize</li>
-            <li>Help</li>
-            <li><button>Create Event</button></li>
-          </ul>
-        </div>
-        <div className="header-acc">
-            <li><button>Log In</button></li>
-            <li><button>Sign Up</button></li>
+      <header className="">
+        <div className="w-11/12 mx-auto grid grid-cols-3 gap-4">
+          <div className=" text-xl" id="header-logo">
+            EVENT MANAGEMENT
+          </div>
+          <div className="" id="search-bar">
+            <input type="text" placeholder="FIND EVENT?"/>
+          </div>
+          <div className="" id="sign">
+            <button></button>
+          </div>
         </div>
       </header>
     </>
   )
 }
+
 
 export default Header;
