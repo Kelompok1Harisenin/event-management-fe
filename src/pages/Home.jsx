@@ -1,3 +1,4 @@
+import OrganizerCard from "../components/cards/OrganizerCard";
 import { EventCard } from "./../components";
 
 const Home = () => {
@@ -89,6 +90,8 @@ const Home = () => {
         org="Kelompok Satu"
         note="👤 7.7k followers"
       />
+
+      <OrganizerCard />
     </div>
   );
 };
