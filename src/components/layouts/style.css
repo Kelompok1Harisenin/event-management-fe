@@ -1,0 +1,54 @@
+#header-list {
+  text-align: center;
+}
+
+#list-event {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list-event li {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#list-event li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+}
+
+#list-event li:hover {
+  background-color: #e5e5e5;
+}
+
+#list-event li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+#list-event li ul li {
+  margin-bottom: 5px;
+}
+
+#list-event li ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+#list-event li ul li a:hover {
+  text-decoration: underline;
+}
