@@ -1,4 +1,4 @@
-import OrganizerCard from "../components/cards/OrganizerCard";
+import { OrganizerCard } from "./../components";
 import { EventCard } from "./../components";
 
 const Home = () => {

@@ -1,5 +1,3 @@
-import React from "react";
-
 const OrganizerCard = () => {
   return (
     <div className="card rounded-none bg-white w-64">
