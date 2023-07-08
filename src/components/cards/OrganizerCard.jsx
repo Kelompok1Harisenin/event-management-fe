@@ -14,7 +14,7 @@ const OrganizerCard = () => {
         <h2 className="card-title font-semibold">Rusty Harden Studio</h2>
         <p>7678 followers</p>
         <div className="card-actions">
-          <button className="btn btn-outline">Buy Now</button>
+          <button className="btn btn-outline">Follow</button>
         </div>
       </div>
     </div>
