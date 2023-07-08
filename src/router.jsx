@@ -1,19 +1,20 @@
-import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import RootLayout from "./../layouts/RootLayout";
-import { Home, About } from "./../pages";
+import RootLayout from "./layouts/RootLayout";
+import { Home, About, AuthForm } from "./pages";
 
-const Router = createBrowserRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="login" element={<AuthForm />} />
+      <Route path="register" element={<AuthForm />} />
     </Route>
   )
 );
 
-export default Router;
+export default router;
