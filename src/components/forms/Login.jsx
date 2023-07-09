@@ -32,7 +32,7 @@ const Login = () => {
           </button>
         </div>
 
-        <div className="flex-col text-sm mt-3 ">
+        <div className="flex-col text-sm mt-2 ">
           <div ><button>Forgotten Account?</button></div>
           <div>Or</div>
           <div><button>Create New Account</button></div>
