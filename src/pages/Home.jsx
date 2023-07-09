@@ -1,4 +1,4 @@
-import { EventCard } from "./../components";
+import { EventCard, OrganizerCard } from "./../components";
 
 const Home = () => {
   return (
@@ -89,6 +89,8 @@ const Home = () => {
         org="Kelompok Satu"
         note="👤 7.7k followers"
       />
+
+      <OrganizerCard />
     </div>
   );
 };
