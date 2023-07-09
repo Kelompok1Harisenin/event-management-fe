@@ -14,7 +14,7 @@ function Header(props) {
           </ul>
         </div>
         <div className="header-acc">
-            <li><button>Log In</button></li>
+            <li><button >Log In</button></li>
             <li><button>Sign Up</button></li>
         </div>
       </header>
