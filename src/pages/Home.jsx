@@ -1,5 +1,4 @@
-import { OrganizerCard } from "./../components";
-import { EventCard } from "./../components";
+import { EventCard, OrganizerCard } from "./../components";
 
 const Home = () => {
   return (
