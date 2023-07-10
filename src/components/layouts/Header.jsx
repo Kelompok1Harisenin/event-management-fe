@@ -67,7 +67,7 @@ function Header() {
           <ul className="hidden max-md:block grid grid-cols-1">
             <li className="col-span-1 text-center py-8 px-10 hover:bg-gray-300" onClick={() => handleClick('bars')}><FaBars /></li>
           </ul>
-          <ul id="list-event" className={`max-md:'hidden' grid grid-cols-5 max-md:${isPressed ? 'block' : 'hidden'} max-md:w-60 max-md:grid-rows-1 max-md:bg-white max-md:right-0`}>
+          <ul id="list-event" className={`grid grid-cols-5 max-md:${isPressed ? 'block' : 'hidden'} max-md:w-60 max-md:grid-rows-1 max-md:bg-white max-md:right-0`}>
             {/* Organize */}
             <li id="organize" className="col-span-1 text-center py-7 hover:bg-gray-300 " onMouseEnter={() => handleMouseEnter('organize')} onMouseLeave={() => handleMouseLeave('organize')} >
               Organize
@@ -89,7 +89,7 @@ function Header() {
             </li>
             {/* Account & Create Event*/}
             <li id="create-event" className="col-span-1 text-center text-green-600 py-7 hover:bg-green-500 hover:text-white"><NavLink>Create Event</NavLink></li>
-            <li id="user" className={`col-span-2 text-center py-7 bg-white hover:bg-gray-300 ${isLoggedIn ? 'block' : 'hidden'}`} >
+            <li id="user" className={`col-span-2 text-center py-7 bg-white hover:bg-gray-300 ${isLoggedIn ? 'block' : 'hidden'} hover:${isHovered.user}`} >
               USER
               <ul id="user-list" className={` h-full grid grid-rows-1 bg-white mt-7 w-full rounded-lg`}>
                 <li className="h-full row-span-1 hover:bg-gray-300" onClick={handleLogout}><NavLink>Log out</NavLink></li>
