@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "./../../assets/Logo.jpg";
+import Logo from "./../../assets/images/Logo.jpg";
 import { FaBars, FaSearch } from "react-icons/fa";
 import Auth from "../../utils/helpers/auth";
 
@@ -54,8 +54,7 @@ const Header = () => {
           className="float-left text-center h-5/6 max-md:cols-span-1"
         >
           <div id="image-logo" className="">
-            <NavLink>
-              {" "}
+            <NavLink to="/">
               <img src={Logo} alt="logo" className="h-20" />
             </NavLink>
           </div>
@@ -178,7 +177,7 @@ const Header = () => {
             </li>
 
             <li
-              id="Log-in"
+              id="Login"
               className={`col-span-1 text-center py-7 hover:bg-gray-300 ${
                 isLoggedIn ? "hidden" : "block"
               }`}
@@ -187,7 +186,7 @@ const Header = () => {
               <NavLink>Log In</NavLink>
             </li>
             <li
-              id="Sign-up"
+              id="Register"
               className={`col-span-1 text-center py-7 hover:bg-gray-300 ${
                 isLoggedIn ? "hidden" : "block"
               }`}

@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Copyright © 2023 - All right reserved by Kelompok 1</p>
+        <p>Copyright © 2023 - All right reserved by HariSenin Group 1</p>
       </div>
     </footer>
   );
