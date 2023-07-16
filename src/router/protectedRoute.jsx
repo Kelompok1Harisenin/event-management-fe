@@ -4,7 +4,6 @@ import Auth from "../utils/helpers/auth";
 
 const ProtectedRoute = () => {
   if (!Auth.isAuthenticated()) {
-    console.log(Auth.isAuthenticated());
     return (
       <RootLayout>
         <Outlet />
