@@ -3,15 +3,11 @@ import { Country, State, City } from "country-state-city";
 import Select from "react-select";
 import { useEffect, useState } from "react";
 
-export default function CountryList() {
+const CountryList = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
-  useEffect(() => {
-    console.log(selectedCountry);
-    console.log(selectedCountry?.isoCode);
-    console.log(State?.getStatesOfCountry(selectedCountry?.isoCode));
-  }, [selectedCountry]);
+
   return (
     <div className="App">
       <Select
@@ -58,6 +54,6 @@ export default function CountryList() {
       />
     </div>
   );
-}
+};
 
-
+export default CountryList;

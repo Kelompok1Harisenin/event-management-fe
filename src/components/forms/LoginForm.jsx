@@ -1,4 +1,4 @@
-const Login = () => {
+const LoginForm = () => {
   return (
     <div className="max-w-2xl mx-auto p-8">
       <h2 className="text-2xl mb-4 font-bold">Log In</h2>
@@ -46,4 +46,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
