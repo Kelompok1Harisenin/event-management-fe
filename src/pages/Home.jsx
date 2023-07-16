@@ -1,8 +1,10 @@
-import EventList from "../components/eventList/EventList";
-import EventAttend from "../components/EventAttend";
-import OrganizerList from "../components/OrganizerList";
-import ContactSales from "../components/contactSales/ContactSales";
-import { OrganizerCard } from "./../components";
+import {
+  OrganizerCard,
+  EventList,
+  OrganizerList,
+  EventAttendList,
+  ContactSalesForm,
+} from "./../components";
 
 const Home = () => {
   return (
@@ -11,9 +13,9 @@ const Home = () => {
         <img src="src/assets/images/riserHero.png" alt="hero-riser" />
       </div>
       <EventList />
-      <EventAttend />
+      <EventAttendList />
       <OrganizerList />
-      <ContactSales />
+      <ContactSalesForm />
 
       <OrganizerCard />
     </div>

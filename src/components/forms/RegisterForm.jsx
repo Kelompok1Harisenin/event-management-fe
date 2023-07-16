@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Register = () => {
+const RegisterForm = () => {
   return (
     <div className="max-w-2xl mx-auto p-8">
       <h2 className="text-2xl mb-4 font-bold">Create an account</h2>
@@ -66,4 +66,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterForm;
