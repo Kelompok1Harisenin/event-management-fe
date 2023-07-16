@@ -1,10 +1,17 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import Logo from "./../../assets/images/Logo.jpg";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
+import Logo from "./../../assets/images/Logo.jpg";
+import Cookies from "js-cookie";
 import Auth from "../../utils/helpers/auth";
+import { Logout } from "../../services/AuthService";
+import { logout } from "../../redux/slices/authSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const [isHovered, setIsHovered] = useState({
     organize: false,
     help: false,
@@ -12,7 +19,15 @@ const Header = () => {
     user: false,
   });
   const [isPressed, setIsPressed] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(Auth.isAuthenticated());
+
+  // User data
+  const [user, setUser] = useState(
+    Auth.isAuthenticated() ? Auth.getUserFromCookies() : null
+  );
+  useEffect(() => {
+    setUser(isLoggedIn ? Auth.getUserFromCookies() : null);
+  }, [isLoggedIn]);
+
   // Hover & Click
   const handleMouseEnter = (id) => {
     setIsHovered((prevState) => ({
@@ -32,14 +47,13 @@ const Header = () => {
     setIsPressed((prevState) => !prevState);
   };
 
-  const handleLogin = () => {
-    Auth.login("user");
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    Auth.logout();
-    setIsLoggedIn(false);
+  const handleLogout = async () => {
+    const refreshToken = JSON.parse(Cookies.get("refreshToken"));
+    const response = await Logout(refreshToken);
+    if (response?.statusCode === 204) {
+      dispatch(logout());
+      navigate("/");
+    }
   };
 
   return (
@@ -162,7 +176,7 @@ const Header = () => {
                 isLoggedIn ? "block" : "hidden"
               } hover:${isHovered.user}`}
             >
-              USER
+              {user?.name}
               <ul
                 id="user-list"
                 className={` h-full grid grid-rows-1 bg-white mt-7 w-full rounded-lg`}
@@ -171,7 +185,7 @@ const Header = () => {
                   className="h-full row-span-1 hover:bg-gray-300"
                   onClick={handleLogout}
                 >
-                  <NavLink>Log out</NavLink>
+                  <NavLink>Logout</NavLink>
                 </li>
               </ul>
             </li>
@@ -181,9 +195,8 @@ const Header = () => {
               className={`col-span-1 text-center py-7 hover:bg-gray-300 ${
                 isLoggedIn ? "hidden" : "block"
               }`}
-              onClick={handleLogin}
             >
-              <NavLink>Log In</NavLink>
+              <NavLink to="/login">Login</NavLink>
             </li>
             <li
               id="Register"
