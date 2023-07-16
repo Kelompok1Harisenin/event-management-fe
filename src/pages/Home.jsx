@@ -2,7 +2,7 @@ import EventList from "../components/eventList/EventList";
 import EventAttend from "../components/EventAttend";
 import OrganizerList from "../components/OrganizerList";
 import ContactSales from "../components/contactSales/ContactSales";
-import { EventCard, OrganizerCard } from "./../components";
+import { OrganizerCard } from "./../components";
 
 const Home = () => {
   return (
@@ -18,6 +18,6 @@ const Home = () => {
       <OrganizerCard />
     </div>
   );
-}
+};
 
 export default Home;

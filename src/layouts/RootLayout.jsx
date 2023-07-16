@@ -1,19 +1,20 @@
 import { useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { Header } from "./../components";
+import { Header, Footer } from "./../components";
 
 const RootLayout = () => {
   const location = useLocation();
 
-  const hiddenHeaderPaths = ["/login", "/register"];
+  const hiddenPaths = ["/login", "/register"];
 
-  const hideHeader = hiddenHeaderPaths.includes(location.pathname);
+  const hideHeaderFooter = hiddenPaths.includes(location.pathname);
   return (
     <div className="root-layout">
-      {!hideHeader && <Header />}
+      {!hideHeaderFooter && <Header />}
       <main>
         <Outlet />
       </main>
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 };

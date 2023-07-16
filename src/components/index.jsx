@@ -1,4 +1,5 @@
 export { default as Header } from "./layouts/Header";
+export { default as Footer } from "./layouts/Footer";
 export { default as Login } from "./forms/Login";
 export { default as Register } from "./forms/Register";
 export { default as EventForm } from "./forms/EventForm";
