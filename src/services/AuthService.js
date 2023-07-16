@@ -1,6 +1,5 @@
 import useAxios from "../hooks/useAxios";
 import Cookies from "js-cookie";
-import axios from "axios";
 
 const Login = async (params) => {
   const data = {
