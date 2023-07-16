@@ -10,7 +10,7 @@ const Register = () => {
           <input
             type="email"
             placeholder="example@mail.com"
-            className="input input-info input-bordered hover:border-cyan-400 hover:border-4"
+            className="input input-bordered input-warning w-full hover:border-orange-300 hover:border-2 transition duration-200 ease-in-out"
           />
         </div>
         <div className="form-control mb-6">
@@ -20,7 +20,7 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password must be at least 8 characters"
-            className="input input-info input-bordered hover:border-cyan-400 hover:border-4"
+            className="input input-bordered input-warning w-full hover:border-orange-300 hover:border-2 transition duration-200 ease-in-out"
           />
         </div>
         <div className="form-control mb-6">
@@ -30,26 +30,25 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password must be at least 8 characters"
-            className="input input-info input-bordered hover:border-cyan-400 hover:border-4"
+            className="input input-bordered input-warning w-full hover:border-orange-300 hover:border-2 transition duration-200 ease-in-out"
           />
         </div>
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 w-full rounded-md transition duration-200 ease-in-out"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 w-full rounded-md transition duration-200 ease-in-out"
           >
             Sign Up
           </button>
-          
         </div>
         <div className="form-control">
-        <label className="label text-sm">
-            <span > <a href="">Already Have an Account?</a>
-              </span>
+          <label className="label text-sm">
+            <span>
+              {" "}
+              <a href="">Already Have an Account?</a>
+            </span>
           </label>
-
         </div>
-        
       </form>
     </div>
   );
