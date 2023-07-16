@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import PrivateRoute from "./privateRoute";
 import ProtectedRoute from "./protectedRoute";
-import { Home, About, AuthForm, CreateEvent, EditEvent } from "../pages";
+import { Home, About, Auth, CreateEvent, EditEvent } from "../pages";
 
 const RootRouter = () => {
   return (
@@ -18,8 +18,8 @@ const RootRouter = () => {
       </Route>
 
       <Route path="/" element={<ProtectedRoute />}>
-        <Route path="login" element={<AuthForm />} />
-        <Route path="register" element={<AuthForm />} />
+        <Route path="login" element={<Auth />} />
+        <Route path="register" element={<Auth />} />
       </Route>
     </Routes>
   );
