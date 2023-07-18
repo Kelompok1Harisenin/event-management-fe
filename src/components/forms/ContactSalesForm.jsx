@@ -1,19 +1,19 @@
 import CountryList from "../dataList/CountryList";
-import htmlFormBackground from "../../assets/images/bgContactSales.jpg";
+import Background from "../../assets/images/bgContactSales.jpg";
 
-const ContactSaleshtmlForm = () => {
+const ContactSalesForm = () => {
   return (
     <section
-      style={{ backgroundImage: `url(${htmlFormBackground})` }}
+      style={{ backgroundImage: `url(${Background})` }}
       className="bg-repeat py-5"
     >
       <div className="w-[400px] md:w-[600px] m-auto rounded-lg px-5 py-5 box-content">
         <p className="font-bold text-center md:text-justify text-slate-800">
-          Fill out the htmlForm bellow to learn about how to get the most out of
+          Fill out the form bellow to learn about how to get the most out of
           EventRiser, sell out your event, and delight your attendees
         </p>
         <div className="w-[300px] md:w-[400px] bg-slate-700 border border-slate-100 rounded-lg m-auto mt-8 mb-5 px-5 py-5 box-content">
-          <htmlForm className="block">
+          <form className="block">
             <label className="grid grid-cols-1 mb-3 text-slate-100">
               Email&#42;
               <input className="border border-slate-800" type="email" />
@@ -67,7 +67,7 @@ const ContactSaleshtmlForm = () => {
               <br />
               <select
                 className="border border-slate-800 w-[400px] w-full"
-                name="cars"
+                name="tickets"
                 id="sales"
               >
                 <option value="" disabled selected>
@@ -84,12 +84,12 @@ const ContactSaleshtmlForm = () => {
             </div>
             <div className="mb-3">
               <label className="text-slate-100" htmlFor="tipe">
-                Reason htmlFor getting in touch
+                Reason for getting in touch
               </label>
               <br />
               <select
                 className="border border-slate-800 w-[400px] w-full"
-                name="cars"
+                name="intouch"
                 id="reason"
               >
                 <option value="" disabled selected>
@@ -97,10 +97,10 @@ const ContactSaleshtmlForm = () => {
                 </option>
                 <option value="reason1">
                   I want to speak with the sales to learn more about using
-                  EventRiser htmlFor my events
+                  EventRiser for my events
                 </option>
                 <option value="reason2">
-                  I'm already an EvenRiser customer looking htmlFor help with my
+                  I'm already an EvenRiser customer looking for help with my
                   account
                 </option>
                 <option value="reason3">
@@ -108,7 +108,7 @@ const ContactSaleshtmlForm = () => {
                   upgrading my package
                 </option>
                 <option value="reason4">
-                  I have a question about a ticket I purchased htmlFor an
+                  I have a question about a ticket I purchased for an
                   EventRises event
                 </option>
                 <option value="reason5">Something else</option>
@@ -146,11 +146,11 @@ const ContactSaleshtmlForm = () => {
             <button className="border bg-orange-500 px-3 py-1 rounded-md font-semibold cursor-pointer hover:scale-105 ease-in duration-300">
               Contact Sales
             </button>
-          </htmlForm>
+          </form>
         </div>
       </div>
     </section>
   );
 };
 
-export default ContactSaleshtmlForm;
+export default ContactSalesForm;

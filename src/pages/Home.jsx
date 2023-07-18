@@ -15,7 +15,7 @@ const Home = () => {
       <EventList />
       <EventAttendList />
       <OrganizerList />
-      {/* <ContactSalesForm /> */}
+      <ContactSalesForm />
 
       <OrganizerCard />
     </div>
