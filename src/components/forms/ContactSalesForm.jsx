@@ -62,7 +62,7 @@ const ContactSaleshtmlForm = () => {
             </div>
             <div className="mb-3">
               <label className="text-sm text-slate-100" htmlFor="tipe">
-                How mant tickets do you normaly sell in one year?&#42;:
+                How many tickets do you normally sell in one year?&#42;:
               </label>
               <br />
               <select
@@ -101,7 +101,7 @@ const ContactSaleshtmlForm = () => {
                 </option>
                 <option value="reason2">
                   I'm already an EvenRiser customer looking htmlFor help with my
-                  accunt
+                  account
                 </option>
                 <option value="reason3">
                   I'm an EvenRiser customer seeking to speak with someone about
