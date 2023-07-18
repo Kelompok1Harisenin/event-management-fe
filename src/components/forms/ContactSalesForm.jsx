@@ -66,7 +66,7 @@ const ContactSalesForm = () => {
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
+                className="border border-slate-800 w-full"
                 name="tickets"
                 id="sales"
               >
@@ -88,7 +88,7 @@ const ContactSalesForm = () => {
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
+                className="border border-slate-800 w-full"
                 name="intouch"
                 id="reason"
               >
@@ -100,11 +100,11 @@ const ContactSalesForm = () => {
                   EventRiser for my events
                 </option>
                 <option value="reason2">
-                  I'm already an EvenRiser customer looking for help with my
+                  I&apos;m already an EvenRiser customer looking for help with my
                   account
                 </option>
                 <option value="reason3">
-                  I'm an EvenRiser customer seeking to speak with someone about
+                  I&apos;m an EvenRiser customer seeking to speak with someone about
                   upgrading my package
                 </option>
                 <option value="reason4">
@@ -120,16 +120,16 @@ const ContactSalesForm = () => {
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
+                className="border border-slate-800 w-full"
                 name="cars"
                 id="how"
               >
                 <option value="" disabled selected>
                   Select...
                 </option>
-                <option value="how1">Web Searc (Google, etc)</option>
+                <option value="how1">Web Search (Google, etc)</option>
                 <option value="how2">Social Media</option>
-                <option value="how3">Web Searc (Google, etc)</option>
+                <option value="how3">Web Search (Google, etc)</option>
                 <option value="how4">
                   Software Evaluation Site (G2, Capterra, Etc)
                 </option>
@@ -137,9 +137,9 @@ const ContactSalesForm = () => {
                 <option value="how6">
                   Recommended by a Friend or Colleague
                 </option>
-                <option value="how7">I've hosted an Event on EventRiser</option>
+                <option value="how7">I&apos;ve hosted an Event on EventRiser</option>
                 <option value="how8">
-                  I've purchased a Ticket on EventRiser
+                  I&apos;ve purchased a Ticket on EventRiser
                 </option>
               </select>
             </div>
