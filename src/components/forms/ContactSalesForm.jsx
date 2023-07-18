@@ -121,7 +121,7 @@ const ContactSalesForm = () => {
               <br />
               <select
                 className="border border-slate-800 w-full"
-                name="cars"
+                name="about"
                 id="how"
               >
                 <option value="" disabled selected>
