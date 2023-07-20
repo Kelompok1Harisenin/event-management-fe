@@ -1,19 +1,19 @@
 import CountryList from "../dataList/CountryList";
-import htmlFormBackground from "../../assets/images/bgContactSales.jpg";
+import Background from "../../assets/images/bgContactSales.jpg";
 
-const ContactSaleshtmlForm = () => {
+const ContactSalesForm = () => {
   return (
     <section
-      style={{ backgroundImage: `url(${htmlFormBackground})` }}
+      style={{ backgroundImage: `url(${Background})` }}
       className="bg-repeat py-5"
     >
       <div className="w-[400px] md:w-[600px] m-auto rounded-lg px-5 py-5 box-content">
         <p className="font-bold text-center md:text-justify text-slate-800">
-          Fill out the htmlForm bellow to learn about how to get the most out of
+          Fill out the form bellow to learn about how to get the most out of
           EventRiser, sell out your event, and delight your attendees
         </p>
         <div className="w-[300px] md:w-[400px] bg-slate-700 border border-slate-100 rounded-lg m-auto mt-8 mb-5 px-5 py-5 box-content">
-          <htmlForm className="block">
+          <form className="block">
             <label className="grid grid-cols-1 mb-3 text-slate-100">
               Email&#42;
               <input className="border border-slate-800" type="email" />
@@ -62,12 +62,12 @@ const ContactSaleshtmlForm = () => {
             </div>
             <div className="mb-3">
               <label className="text-sm text-slate-100" htmlFor="tipe">
-                How mant tickets do you normaly sell in one year?&#42;:
+                How many tickets do you normally sell in one year?&#42;:
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
-                name="cars"
+                className="border border-slate-800 w-full"
+                name="tickets"
                 id="sales"
               >
                 <option value="" disabled selected>
@@ -84,12 +84,12 @@ const ContactSaleshtmlForm = () => {
             </div>
             <div className="mb-3">
               <label className="text-slate-100" htmlFor="tipe">
-                Reason htmlFor getting in touch
+                Reason for getting in touch
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
-                name="cars"
+                className="border border-slate-800 w-full"
+                name="intouch"
                 id="reason"
               >
                 <option value="" disabled selected>
@@ -97,18 +97,18 @@ const ContactSaleshtmlForm = () => {
                 </option>
                 <option value="reason1">
                   I want to speak with the sales to learn more about using
-                  EventRiser htmlFor my events
+                  EventRiser for my events
                 </option>
                 <option value="reason2">
-                  I'm already an EvenRiser customer looking htmlFor help with my
-                  accunt
+                  I&apos;m already an EvenRiser customer looking for help with my
+                  account
                 </option>
                 <option value="reason3">
-                  I'm an EvenRiser customer seeking to speak with someone about
+                  I&apos;m an EvenRiser customer seeking to speak with someone about
                   upgrading my package
                 </option>
                 <option value="reason4">
-                  I have a question about a ticket I purchased htmlFor an
+                  I have a question about a ticket I purchased for an
                   EventRises event
                 </option>
                 <option value="reason5">Something else</option>
@@ -120,16 +120,16 @@ const ContactSaleshtmlForm = () => {
               </label>
               <br />
               <select
-                className="border border-slate-800 w-[400px] w-full"
-                name="cars"
+                className="border border-slate-800 w-full"
+                name="about"
                 id="how"
               >
                 <option value="" disabled selected>
                   Select...
                 </option>
-                <option value="how1">Web Searc (Google, etc)</option>
+                <option value="how1">Web Search (Google, etc)</option>
                 <option value="how2">Social Media</option>
-                <option value="how3">Web Searc (Google, etc)</option>
+                <option value="how3">Web Search (Google, etc)</option>
                 <option value="how4">
                   Software Evaluation Site (G2, Capterra, Etc)
                 </option>
@@ -137,20 +137,20 @@ const ContactSaleshtmlForm = () => {
                 <option value="how6">
                   Recommended by a Friend or Colleague
                 </option>
-                <option value="how7">I've hosted an Event on EventRiser</option>
+                <option value="how7">I&apos;ve hosted an Event on EventRiser</option>
                 <option value="how8">
-                  I've purchased a Ticket on EventRiser
+                  I&apos;ve purchased a Ticket on EventRiser
                 </option>
               </select>
             </div>
             <button className="border bg-orange-500 px-3 py-1 rounded-md font-semibold cursor-pointer hover:scale-105 ease-in duration-300">
               Contact Sales
             </button>
-          </htmlForm>
+          </form>
         </div>
       </div>
     </section>
   );
 };
 
-export default ContactSaleshtmlForm;
+export default ContactSalesForm;
