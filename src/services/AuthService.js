@@ -1,20 +1,20 @@
-import useAxios from "../hooks/useAxios";
+import axios from "../hooks/useAxios";
 import Cookies from "js-cookie";
 
-const Login = async (params) => {
+const login = async (params) => {
   const data = {
     email: params.email,
     password: params.password,
   };
-  const response = await useAxios("POST", "/auth/login", data);
+  const response = await axios("POST", "/auth/login", data);
   return response;
 };
 
-const Logout = async (refreshToken) => {
+const logout = async (refreshToken) => {
   const headers = {
     Authorization: JSON.parse(Cookies.get("accessToken")),
   };
-  const response = await useAxios(
+  const response = await axios(
     "POST",
     "/auth/logout",
     { refreshToken },
@@ -23,4 +23,4 @@ const Logout = async (refreshToken) => {
   return response;
 };
 
-export { Login, Logout };
+export { login, logout };

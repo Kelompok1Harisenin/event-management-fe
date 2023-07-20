@@ -7,16 +7,19 @@ const useAxios = async (method, endpoint, data = null, options = {}) => {
     statusCode: null,
     loading: true,
     error: null,
-    response: null,
+    headers: null,
+    data: null,
   };
 
   const url = baseUrl + endpoint;
   try {
     const response = await axios[method.toLowerCase()](url, data, options);
     state.statusCode = response?.status;
-    state.response = response?.data;
+    state.headers = response?.headers;
+    state.data = response?.data;
   } catch (error) {
-    state.error = error.response?.data;
+    state.statusCode = error.response?.status;
+    state.error = error.response?.data?.message ?? error.response?.data;
   } finally {
     state.loading = false;
   }

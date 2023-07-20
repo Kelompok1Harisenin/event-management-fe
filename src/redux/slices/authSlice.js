@@ -1,54 +1,66 @@
-import { createSlice } from "@reduxjs/toolkit";
-import Cookies from "js-cookie";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { authService } from "./../../services";
+
+export const loginUser = createAsyncThunk("auth/login", async (data) => {
+  const response = await authService.login(data);
+  if (response.statusCode >= 400) {
+    const errorMessage = response.error || "An error occurred during login.";
+    throw new Error(errorMessage);
+  }
+  return response.data;
+});
+
+export const logoutUser = createAsyncThunk(
+  "auth/logout",
+  async (refreshToken) => {
+    const response = await authService.logout(refreshToken);
+    if (response.statusCode >= 400) {
+      const errorMessage = response.error || "An error occurred during logout.";
+      throw new Error(errorMessage);
+    }
+    return response.data;
+  }
+);
 
 const initialState = {
   user: null,
-  accessToken: null,
-  refreshToken: null,
-  loading: false,
+  status: "idle",
   error: null,
-  isLoggedIn: false,
 };
 
 const authSlice = createSlice({
-  name: "login",
+  name: "auth",
   initialState,
   reducers: {
-    loginRequest: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
-    loginSuccess: (state, action) => {
-      const data = action.payload.response;
-      state.loading = false;
-      state.user = data.user;
-      state.accessToken = data.tokens.access.token;
-      state.refreshToken = data.tokens.refresh.token;
-      state.isLoggedIn = true;
-
-      Cookies.set("user", JSON.stringify(state.user));
-      Cookies.set("accessToken", JSON.stringify(state.accessToken));
-      Cookies.set("refreshToken", JSON.stringify(state.refreshToken));
-    },
-    loginFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload.error;
-    },
     logout: (state) => {
       state.user = null;
-      state.accessToken = null;
-      state.refreshToken = null;
-
-      Cookies.remove("user");
-      Cookies.remove("accessToken");
-      Cookies.remove("refreshToken");
-
-      state.isLoggedIn = false;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.user = action.payload;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error?.message;
+      })
+      .addCase(logoutUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        state.status = "succeeded";
+        state.user = null;
+      })
+      .addCase(logoutUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error?.message;
+      });
   },
 });
 
-export const { loginRequest, loginSuccess, loginFailure, logout } =
-  authSlice.actions;
-
-export default authSlice;
+export default authSlice.reducer;
