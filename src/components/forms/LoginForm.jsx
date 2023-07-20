@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Login } from "../../services/AuthService";
-import {
-  loginRequest,
-  loginSuccess,
-  loginFailure,
-} from "../../redux/slices/authSlice";
+import { loginUser } from "../../redux/slices/authSlice";
+import { ErrorPopup } from "../../components";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -15,36 +12,43 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    dispatch(loginRequest());
 
     try {
-      const userData = await Login(formData);
-      if (userData.error) {
-        dispatch(loginFailure(userData));
-      } else {
-        dispatch(loginSuccess(userData));
+      const result = await dispatch(loginUser(formData));
+      if (result.payload) {
+        const tokens = result.payload.tokens;
+        Cookies.set("user", JSON.stringify(result.payload.user));
+        Cookies.set("accessToken", JSON.stringify(tokens.access.token));
+        Cookies.set("refreshToken", JSON.stringify(tokens.refresh.token));
         navigate("/");
+      } else {
+        setError(result.error?.message);
       }
     } catch (error) {
-      dispatch(loginFailure(error));
+      setError(error.message);
     }
+  };
+
+  const closeErrorPopup = () => {
+    setError(null);
   };
 
   return (
     <div className="max-w-2xl mx-auto p-8">
       <h2 className="text-2xl mb-4 font-bold">Log In</h2>
-      <form className="w-full max-w-md sm:w-[300px] md:w-[350px]">
+      <form
+        className="w-full max-w-md sm:w-[300px] md:w-[350px]"
+        onSubmit={handleLogin}
+      >
         <div className="form-control mb-6">
           <label className="label">
             <span className="label-text">Email Address</span>
@@ -74,7 +78,6 @@ const LoginForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            onClick={handleLogin}
             className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 w-full rounded-md transition duration-200 ease-in-out"
           >
             Login
@@ -90,6 +93,8 @@ const LoginForm = () => {
             <button>Create New Account</button>
           </div>
         </div>
+
+        {error && <ErrorPopup message={error} onClose={closeErrorPopup} />}
       </form>
     </div>
   );

@@ -1,12 +1,9 @@
 import Cookies from "js-cookie";
 
-const Auth = {
+const authHelpers = {
   getUserFromCookies: () => {
     const userCookie = Cookies.get("user");
-    if (userCookie) {
-      return JSON.parse(userCookie);
-    }
-    return null;
+    return userCookie ? JSON.parse(userCookie) : null;
   },
   isAuthenticated: () => {
     const userCookie = Cookies.get("user");
@@ -17,4 +14,4 @@ const Auth = {
   },
 };
 
-export default Auth;
+export default authHelpers;

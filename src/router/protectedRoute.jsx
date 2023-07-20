@@ -1,9 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
-import Auth from "../utils/helpers/auth";
+import { authHelpers } from "../utils";
 
 const ProtectedRoute = () => {
-  if (!Auth.isAuthenticated()) {
+  if (!authHelpers.isAuthenticated()) {
     return (
       <RootLayout>
         <Outlet />

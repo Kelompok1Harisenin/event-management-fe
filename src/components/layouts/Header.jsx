@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
 import Logo from "./../../assets/images/Logo.jpg";
 import Cookies from "js-cookie";
-import Auth from "../../utils/helpers/auth";
-import { Logout } from "../../services/AuthService";
-import { logout } from "../../redux/slices/authSlice";
+import { authHelpers } from "../../utils";
+import { logoutUser } from "../../redux/slices/authSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const isLoggedIn = authHelpers.isAuthenticated();
   const [isHovered, setIsHovered] = useState({
     organize: false,
     help: false,
@@ -21,12 +20,7 @@ const Header = () => {
   const [isPressed, setIsPressed] = useState(false);
 
   // User data
-  const [user, setUser] = useState(
-    Auth.isAuthenticated() ? Auth.getUserFromCookies() : null
-  );
-  useEffect(() => {
-    setUser(isLoggedIn ? Auth.getUserFromCookies() : null);
-  }, [isLoggedIn]);
+  const user = isLoggedIn ? authHelpers.getUserFromCookies() : null;
 
   // Hover & Click
   const handleMouseEnter = (id) => {
@@ -49,11 +43,12 @@ const Header = () => {
 
   const handleLogout = async () => {
     const refreshToken = JSON.parse(Cookies.get("refreshToken"));
-    const response = await Logout(refreshToken);
-    if (response?.statusCode === 204) {
-      dispatch(logout());
-      navigate("/");
-    }
+    await dispatch(logoutUser(refreshToken));
+
+    Cookies.remove("user");
+    Cookies.remove("accessToken");
+    Cookies.remove("refreshToken");
+    navigate("/");
   };
 
   return (
@@ -168,7 +163,7 @@ const Header = () => {
               id="create-event"
               className="col-span-1 text-center text-green-600 py-7 hover:bg-green-500 hover:text-white"
             >
-              <NavLink>Create Event</NavLink>
+              <NavLink to="/create-event">Create Event</NavLink>
             </li>
             <li
               id="user"
