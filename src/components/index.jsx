@@ -11,3 +11,4 @@ export { default as OrganizerList } from "./dataList/OrganizerList";
 export { default as CountryList } from "./dataList/CountryList";
 export { default as EventAttendList } from "./dataList/EventAttendList";
 export { default as FieldError } from "./errors/FieldError";
+export { default as ReserveTicketCard } from "./cards/ReserveTicketCard";
