@@ -76,6 +76,18 @@ const LoginForm = () => {
             onChange={handleChange}
           />
         </div>
+
+        <div className="flex justify-right label text-sm  text-blue-500 hover:text-blue-600 hover:underline"> 
+
+        <span></span>
+          <Link
+            to="/forgot"
+            
+          >
+            Forgot Password?
+          </Link>
+        </div>
+
         <div className="flex justify-center">
           <button
             type="submit"
@@ -85,29 +97,17 @@ const LoginForm = () => {
           </button>
         </div>
 
-        <div className="flex-col text-sm mt-2 ">
-          <div>
+        <div className="flex justify-center label text-sm text-black"> 
+          Don't have an account?
           <Link
-              to="/register"
-              className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
-              
-            >
-              Forgot Password?
-            </Link>
-          </div>
-          <div
-          className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
-          >Or</div>
-          <div>
-            <Link
-              to="/register"
-              className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
-              
-            >
-              Create New Account?
-            </Link>
-          </div>
+            to="/register"
+            className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
+          >
+            Register Now
+          </Link>
         </div>
+
+        
 
         {error && <ErrorPopup message={error} onClose={closeErrorPopup} />}
       </form>
