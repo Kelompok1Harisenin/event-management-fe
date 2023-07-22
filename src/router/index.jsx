@@ -3,6 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import PrivateRoute from "./privateRoute";
 import ProtectedRoute from "./protectedRoute";
 import { Home, About, Auth, CreateEvent, EditEvent } from "../pages";
+import { NotFound } from "../components";
 
 const RootRouter = () => {
   return (
@@ -10,6 +11,7 @@ const RootRouter = () => {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
 
       <Route path="/" element={<PrivateRoute />}>
