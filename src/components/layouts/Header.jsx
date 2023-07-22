@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[1000] bg-white shadow-md md:p-1">
+    <header className="fixed top-0 left-0 w-full z-[1000] bg-white shadow-md p-2 md:p-1">
       <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
         {/* Icon */}
         <NavLink to="/">
@@ -59,7 +59,7 @@ const Header = () => {
 
         {/* Mobile Burger */}
         <button
-          className="md:hidden py-2 px-6  text-black hover:bg-gray-300"
+          className="md:hidden py-2 px-4  text-black hover:bg-gray-300"
           onClick={() => handleClick("bars")}
         >
           <FaBars />
