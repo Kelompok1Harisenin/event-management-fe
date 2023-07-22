@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../redux/slices/authSlice";
 import { ErrorPopup } from "../../components";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -86,11 +87,25 @@ const LoginForm = () => {
 
         <div className="flex-col text-sm mt-2 ">
           <div>
-            <button>Forgot Password?</button>
+          <Link
+              to="/register"
+              className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
+              
+            >
+              Forgot Password?
+            </Link>
           </div>
-          <div>Or</div>
+          <div
+          className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
+          >Or</div>
           <div>
-            <button>Create New Account</button>
+            <Link
+              to="/register"
+              className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
+              
+            >
+              Create New Account?
+            </Link>
           </div>
         </div>
 
