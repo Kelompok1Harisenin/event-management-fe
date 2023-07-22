@@ -1,5 +1,5 @@
 import CountryList from "../dataList/CountryList";
-import Background from "../../assets/images/bgContactSales.jpg";
+import Background from "/images/bgContactSales.jpg";
 
 const ContactSalesForm = () => {
   return (
@@ -100,16 +100,16 @@ const ContactSalesForm = () => {
                   EventRiser for my events
                 </option>
                 <option value="reason2">
-                  I&apos;m already an EvenRiser customer looking for help with my
-                  account
+                  I&apos;m already an EvenRiser customer looking for help with
+                  my account
                 </option>
                 <option value="reason3">
-                  I&apos;m an EvenRiser customer seeking to speak with someone about
-                  upgrading my package
+                  I&apos;m an EvenRiser customer seeking to speak with someone
+                  about upgrading my package
                 </option>
                 <option value="reason4">
-                  I have a question about a ticket I purchased for an
-                  EventRises event
+                  I have a question about a ticket I purchased for an EventRises
+                  event
                 </option>
                 <option value="reason5">Something else</option>
               </select>
@@ -137,7 +137,9 @@ const ContactSalesForm = () => {
                 <option value="how6">
                   Recommended by a Friend or Colleague
                 </option>
-                <option value="how7">I&apos;ve hosted an Event on EventRiser</option>
+                <option value="how7">
+                  I&apos;ve hosted an Event on EventRiser
+                </option>
                 <option value="how8">
                   I&apos;ve purchased a Ticket on EventRiser
                 </option>
