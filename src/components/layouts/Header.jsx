@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[1000] bg-white shadow-md md:p-1">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
+      <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5">
         {/* Icon */}
         <NavLink to="/">
           <img
@@ -66,7 +66,7 @@ const Header = () => {
         </button>
 
         {/* Header Navigation List */}
-        <nav className="hidden md:flex">
+        <div className="hidden md:flex">
           <ul
             id="list-event"
             className={`hidden md:flex gap-3 max-md:${
@@ -162,8 +162,8 @@ const Header = () => {
               </>
             )}
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   );
 };
