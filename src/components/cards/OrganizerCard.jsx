@@ -3,7 +3,7 @@ const OrganizerCard = () => {
     <div className="card rounded-none bg-white w-64">
       <figure className="px-10 pt-10">
         <img
-          src="src/assets/images/gambar1.png"
+          src="/images/gambar1.png"
           alt="Shoes"
           className="rounded-full w-24 h-24"
         />

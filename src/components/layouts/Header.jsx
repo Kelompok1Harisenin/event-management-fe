@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
-import Logo from "./../../assets/images/Logo.jpg";
 import Cookies from "js-cookie";
 import { authHelpers } from "../../utils";
 import { logoutUser } from "../../redux/slices/authSlice";
@@ -64,7 +63,7 @@ const Header = () => {
         >
           <div id="image-logo" className="">
             <NavLink to="/">
-              <img src={Logo} alt="logo" className="h-20" />
+              <img src="/images/Logo.jpg" alt="logo" className="h-20" />
             </NavLink>
           </div>
         </div>
