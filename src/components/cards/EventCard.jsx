@@ -1,19 +1,8 @@
 import PropTypes from "prop-types";
 
 const EventCard = (props) => {
-  EventCard.propTypes = {
-    img: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    place: PropTypes.string.isRequired,
-    cost: PropTypes.string.isRequired,
-    org: PropTypes.string.isRequired,
-    note: PropTypes.string.isRequired,
-  };
-
   return (
-    <div className="grid grid-cols-1 w-full bg-white my-10 duration-200 delay-150 hover:shadow-2xl hover:delay-200">
+    <div className="grid grid-cols-1 w-full bg-white my-10 cursor-pointer duration-200 delay-150 hover:shadow-2xl hover:delay-200">
       <div className="relative col-span-1 w-full text-left">
         <img src={props.img} alt="Event Pic" />
         <div className="absolute w-3/12 -bottom-5 right-0 animate-pulse">
@@ -48,6 +37,17 @@ const EventCard = (props) => {
       </div>
     </div>
   );
+};
+
+EventCard.propTypes = {
+  img: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  place: PropTypes.string.isRequired,
+  cost: PropTypes.string.isRequired,
+  org: PropTypes.string.isRequired,
+  note: PropTypes.string.isRequired,
 };
 
 export default EventCard;

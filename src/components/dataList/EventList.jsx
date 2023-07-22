@@ -81,7 +81,7 @@ const inputEvent = {
   ],
 };
 
-const RenderUlang = () => {
+const LoadData = () => {
   return inputEvent.eventName.map((eventName, index) => (
     <EventCard
       key={index}
@@ -99,11 +99,14 @@ const RenderUlang = () => {
 
 const EventList = () => {
   return (
-    <div className="py-10">
+    <section className="py-8">
+      <h2 className="md:mx-5 text-orange-700 mt-10 mb-5 px-5 uppercase font-bold text-xl relative">
+        All Events
+      </h2>
       <div className="max-lg:grid-cols-3 max-lg:px-5 max-sm:grid-cols-2 max-sm:px-0 grid grid-cols-4 gap-5 px-10 bg-slate-100">
-        <RenderUlang />
+        <LoadData />
       </div>
-    </div>
+    </section>
   );
 };
 
