@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <span className="footer">Company</span>
+        <span className="footer-title">Company</span>
         <NavLink to="/">About us</NavLink>
         <NavLink to="/">Contact</NavLink>
         <NavLink to="/">Jobs</NavLink>
@@ -18,9 +18,9 @@ const Footer = () => {
       </div>
 
       <div>
-        <span className="footer">Social</span>
+        <span className="footer-title">Social</span>
         <div className="grid grid-flow-col gap-4">
-          <a>
+          <a href="https://twitter.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -32,8 +32,9 @@ const Footer = () => {
             </svg>
           </a>
 
-          <a>
+          <a href="https://youtube.com">
             <svg
+
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -44,7 +45,7 @@ const Footer = () => {
             </svg>
           </a>
 
-          <a>
+          <a href="https://facebook.com.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -58,7 +59,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Copyright © 2023 - All right reserved by HariSenin Group 1</p>
+        <p className="font-bold text-right ">Copyright© 2023-All right reserved by HariSenin Group 1</p>
       </div>
     </footer>
   );
