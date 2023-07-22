@@ -83,7 +83,7 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 mt-16 md:mt-24">
       <h1 className="text-2xl font-bold mb-4">Create Event</h1>
       <EventForm
         formData={formData}
