@@ -13,4 +13,5 @@ export { default as CountryList } from "./dataList/CountryList";
 export { default as EventAttendList } from "./dataList/EventAttendList";
 export { default as FieldError } from "./errors/FieldError";
 export { default as ErrorPopup } from "./errors/ErrorPopup";
+export { default as NotFound } from "./errors/NotFound";
 export { default as ScrollToTopButton } from "./others/ScrollToTopButton";
