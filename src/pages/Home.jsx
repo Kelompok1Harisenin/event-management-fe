@@ -8,7 +8,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="py-10">
+    <div className="py-10 mt-8 md:mt-12">
       <div className="px-2 max-lg:px-1 max-sm:px-0">
         <img src="/images/riserHero.png" alt="hero-riser" />
       </div>
