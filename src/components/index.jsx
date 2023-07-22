@@ -6,6 +6,7 @@ export { default as EventForm } from "./forms/EventForm";
 export { default as ContactSalesForm } from "./forms/ContactSalesForm";
 export { default as EventCard } from "./cards/EventCard";
 export { default as OrganizerCard } from "./cards/OrganizerCard";
+export { default as HorizontalOrganizerCard } from "./cards/HorizontalOrganizerCard";
 export { default as ReserveTicketCard } from "./cards/ReserveTicketCard";
 export { default as EventList } from "./dataList/EventList";
 export { default as OrganizerList } from "./dataList/OrganizerList";

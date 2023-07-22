@@ -1,6 +1,6 @@
 const OrganizerCard = () => {
   return (
-    <div className="card rounded-none bg-white w-64">
+    <div className="card rounded-none bg-white w-64 shadow">
       <figure className="px-10 pt-10">
         <img
           src="src/assets/images/gambar1.png"

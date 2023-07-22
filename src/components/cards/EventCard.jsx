@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 const EventCard = (props) => {
   EventCard.propTypes = {
@@ -17,16 +18,16 @@ const EventCard = (props) => {
       <div className="relative col-span-1 w-full text-left">
         <img src={props.img} alt="Event Pic" />
         <div className="absolute w-3/12 -bottom-5 right-0 animate-pulse">
-          <a href="#">
+          <NavLink to="#">
             <img src={props.icon} alt="Event Pic" />
-          </a>
+          </NavLink>
         </div>
       </div>
 
       <div className="col-span-1 w-full text-left mt-8 my-1 px-2">
-        <a href="#" className="font-bold text-lg">
+        <NavLink to="event-details" className="font-bold text-lg">
           {props.name}
-        </a>
+        </NavLink>
       </div>
       <div className="col-span-1 w-full text-left my-1 px-2">
         <p className="font-semibold text-md text-red-700">{props.date}</p>
