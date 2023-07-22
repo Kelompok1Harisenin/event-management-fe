@@ -1,9 +1,9 @@
 const OrganizerCard = () => {
   return (
-    <div className="card rounded-none bg-white w-64 shadow">
+    <div className="card m-4 border rounded-md shadow-md bg-white w-64 cursor-pointer duration-200 delay-150 hover:shadow-2xl hover:delay-200">
       <figure className="px-10 pt-10">
         <img
-          src="src/assets/images/gambar1.png"
+          src="/images/gambar1.png"
           alt="Shoes"
           className="rounded-full w-24 h-24"
         />
