@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { LoginForm, RegisterForm, ForgotPasswordForm} from "./../components";
+import { LoginForm, RegisterForm, ForgotPasswordForm } from "./../components";
 
 const AuthForm = () => {
   const location = useLocation();
@@ -7,16 +7,17 @@ const AuthForm = () => {
   let formComponent;
   if (location.pathname === "/login") {
     formComponent = <LoginForm />;
-  } if (location.pathname === "/register") {
+  }
+  if (location.pathname === "/register") {
     formComponent = <RegisterForm />;
-  } if (location.pathname === "/forgot")  {
+  }
+  if (location.pathname === "/forgot") {
     formComponent = <ForgotPasswordForm />;
   }
 
-
   return (
     <section>
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen overflow-hidden">
         <div className="w-full md:w-1/2 bg-white flex flex-col items-center">
           <div className="flex flex-col items-center justify-center h-full">
             {formComponent}

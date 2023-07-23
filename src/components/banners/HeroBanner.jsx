@@ -45,8 +45,6 @@ const HeroBanner = ({ slides }) => {
         }}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.image}>
