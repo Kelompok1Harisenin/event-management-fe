@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../redux/slices/authSlice";
-import { ErrorPopup } from "../../components";
+import { loginUser } from "./../../redux/slices/authSlice";
+import { ErrorPopup } from "./../../components";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
+import { authHelpers } from "./../../utils";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const result = await dispatch(loginUser(formData));
+      const hashedPassword = await authHelpers.hashPassword(formData.password);
+      const loginData = { ...formData, password: hashedPassword };
+      const result = await dispatch(loginUser(loginData));
       if (result.payload) {
         const tokens = result.payload.tokens;
         Cookies.set("user", JSON.stringify(result.payload.user));
@@ -77,15 +80,9 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className="flex justify-right label text-sm  text-blue-500 hover:text-blue-600 hover:underline"> 
-
-        <span></span>
-          <Link
-            to="/forgot"
-            
-          >
-            Forgot Password?
-          </Link>
+        <div className="flex justify-right label text-sm  text-blue-500 hover:text-blue-600 hover:underline">
+          <span></span>
+          <Link to="/forgot">Forgot Password?</Link>
         </div>
 
         <div className="flex justify-center">
@@ -97,8 +94,8 @@ const LoginForm = () => {
           </button>
         </div>
 
-        <div className="flex justify-center label text-sm text-black"> 
-          Don't have an account?
+        <div className="flex justify-center label text-sm text-black">
+          Don&apos;t have an account?
           <Link
             to="/register"
             className="label text-sm text-blue-500 hover:text-blue-600 hover:underline"
@@ -106,8 +103,6 @@ const LoginForm = () => {
             Register Now
           </Link>
         </div>
-
-        
 
         {error && <ErrorPopup message={error} onClose={closeErrorPopup} />}
       </form>
