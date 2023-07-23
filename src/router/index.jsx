@@ -22,6 +22,7 @@ const RootRouter = () => {
       <Route path="/" element={<ProtectedRoute />}>
         <Route path="login" element={<Auth />} />
         <Route path="register" element={<Auth />} />
+        <Route path="forgot" element={<Auth />} />
       </Route>
     </Routes>
   );

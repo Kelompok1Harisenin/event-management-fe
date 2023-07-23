@@ -5,7 +5,7 @@ import { Header, Footer } from "./../components";
 const RootLayout = () => {
   const location = useLocation();
 
-  const hiddenPaths = ["/login", "/register"];
+  const hiddenPaths = ["/login", "/register", "/forgot"];
 
   const hideHeaderFooter = hiddenPaths.includes(location.pathname);
   return (

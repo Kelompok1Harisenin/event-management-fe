@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { LoginForm, RegisterForm } from "./../components";
+import { LoginForm, RegisterForm, ForgotPasswordForm} from "./../components";
 
 const AuthForm = () => {
   const location = useLocation();
@@ -7,9 +7,12 @@ const AuthForm = () => {
   let formComponent;
   if (location.pathname === "/login") {
     formComponent = <LoginForm />;
-  } else {
+  } if (location.pathname === "/register") {
     formComponent = <RegisterForm />;
+  } if (location.pathname === "/forgot")  {
+    formComponent = <ForgotPasswordForm />;
   }
+
 
   return (
     <section>
