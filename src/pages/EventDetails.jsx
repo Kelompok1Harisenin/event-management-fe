@@ -3,9 +3,9 @@ import { HorizontalOrganizerCard, ReserveTicketCard } from "../components";
 const EventDetails = () => {
   return (
     // Image
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-24">
       <div className=" flex justify-center container bg-slate-200 max-w-full">
-        <img src="src/assets/images/gambar1.png" alt="" />
+        <img src="/images/gambar1.png" alt="" />
       </div>
 
       {/* Main Container */}

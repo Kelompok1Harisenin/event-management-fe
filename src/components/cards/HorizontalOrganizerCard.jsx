@@ -3,7 +3,7 @@ const HorizontalOrganizerCard = () => {
     <div className="rounded-lg border-2 bg-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between p-3 mb-12">
       <div className="flex items-center md:items-start">
         <img
-          src="src/assets/images/gambar1.png"
+          src="/images/gambar1.png"
           alt="Shoes"
           className="rounded-full w-14 h-14 mr-4"
         />
