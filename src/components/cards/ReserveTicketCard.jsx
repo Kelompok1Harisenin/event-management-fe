@@ -21,7 +21,7 @@ const ReserveTicketCard = () => {
   const isDecrementDisabled = count === 1;
 
   return (
-    <div className="border rounded-lg border-gray-400 container w-80 h-fit p-4 border-opacity-30 bg-white">
+    <div className="border rounded-lg border-gray-400 container w-80 h-fit p-4 border-opacity-30 bg-white ">
       <div className="border-2 border-blue-700 mb-2 p-4 rounded-lg">
         <div className="flex justify-between content-center">
           <div>
@@ -49,7 +49,7 @@ const ReserveTicketCard = () => {
         </div>
       </div>
       <div>
-        <button className="btn-primary btn-block p-1 rounded-md">
+        <button className=" text-white btn-primary bg-orange-500 hover:bg-orange-600 btn-block p-1 rounded-md">
           Reserve a spot
         </button>
       </div>
