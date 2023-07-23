@@ -77,7 +77,7 @@ const Footer = () => {
       <div>
         <Link to="/">
           <img
-            src="/public/images/riserLogo.png"
+            src="/images/riserLogo.png"
             alt="logo"
             className="h-12 md:h-16"
           ></img>
