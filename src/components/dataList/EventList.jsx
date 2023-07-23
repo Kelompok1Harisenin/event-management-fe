@@ -99,7 +99,7 @@ const LoadData = () => {
 
 const EventList = () => {
   return (
-    <section className="py-8">
+    <section className="py-2">
       <h2 className="md:mx-5 text-orange-700 mt-10 mb-5 px-5 uppercase font-bold text-xl relative">
         All Events
       </h2>
