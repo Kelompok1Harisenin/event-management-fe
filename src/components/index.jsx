@@ -1,5 +1,6 @@
 export { default as Header } from "./layouts/Header";
 export { default as Footer } from "./layouts/Footer";
+export { default as HeroBanner } from "./banners/HeroBanner";
 export { default as LoginForm } from "./forms/LoginForm";
 export { default as RegisterForm } from "./forms/RegisterForm";
 export { default as ForgotPasswordForm } from "./forms/ForgotPasswordForm";
