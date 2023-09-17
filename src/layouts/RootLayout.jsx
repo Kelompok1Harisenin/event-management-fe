@@ -11,7 +11,7 @@ const RootLayout = () => {
   return (
     <div className="root-layout">
       {!hideHeaderFooter && <Header />}
-      <main>
+      <main className={!hideHeaderFooter ? "mt-8 py-10" : ""}>
         <Outlet />
       </main>
       {!hideHeaderFooter && <Footer />}

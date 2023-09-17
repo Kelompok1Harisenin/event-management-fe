@@ -10,7 +10,7 @@ import slides from "./../data/banners.json";
 
 const Home = () => {
   return (
-    <div className="py-10 mt-8">
+    <div>
       <HeroBanner slides={slides} />
       <EventList />
       <EventAttendList />
