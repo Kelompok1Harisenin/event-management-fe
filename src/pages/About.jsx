@@ -1,5 +1,10 @@
+import { ReserveTicketPopup } from "../components";
+
+ReserveTicketPopup
 const About = () => {
-  return <h1>About</h1>;
+  return (
+    <ReserveTicketPopup />
+  );
 };
 
 export default About;
