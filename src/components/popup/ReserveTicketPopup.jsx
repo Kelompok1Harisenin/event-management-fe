@@ -1,8 +1,18 @@
 // import React from 'react'
 
+import { useSelector, useDispatch } from 'react-redux';
+import { closePopup } from './action';
+
 export default function ReserveTicketPopup() {
+  const isPopupVisible = useSelector(state => state.popup.isPopupVisible);
+  const dispatch = useDispatch();
+
+  const handleCancel = () => {
+    dispatch(closePopup());
+  };
   return (
-    <div id="behind" className=" w-full h-full fixed top-0 left-0 bg-black/60">
+    isPopupVisible && (
+    <div id="behind" className={`w-full h-full fixed top-0 left-0 bg-black/60`}>
       <div className=" w-5/6 h-4/5 mx-auto mt-24 grid grid-cols-5">
         <div className=" col-span-3 bg-white rounded-lg relative z-10">
           <div className="w-11/12 h-full mx-auto grid grid-rows-8">
@@ -20,7 +30,7 @@ export default function ReserveTicketPopup() {
             </div>
             <div className="flex  row-span-1">
               <div className="flex w-1/2 m-auto">
-                <button className="btn btn-error ml-auto mr-3">Cancel</button>
+                <button className="btn btn-error ml-auto mr-3" onClick={handleCancel}>Cancel</button>
                 <button className="btn btn-success mr-auto ml-">Buying</button>
               </div>
             </div>
@@ -31,5 +41,8 @@ export default function ReserveTicketPopup() {
         </div>
       </div>
     </div>
+    )
   )
+
+
 }

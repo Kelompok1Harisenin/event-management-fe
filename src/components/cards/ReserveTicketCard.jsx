@@ -1,13 +1,11 @@
 import { useState } from "react";
 import ReserveTicketPopup from "../popup/ReserveTicketPopup";
+import { useDispatch } from 'react-redux';
+import { showPopup } from '../popup/action';
 
 const ReserveTicketCard = () => {
   const [count, setCount] = useState(1);
-  const [popUp, setPopUp] = useState(false);
 
-  function reserveTicket() {
-    setPopUp((prevState) => !prevState);
-  }
   function decrementCount() {
     setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
   }
@@ -24,7 +22,11 @@ const ReserveTicketCard = () => {
 
   // Set button disabled if count = 1
   const isDecrementDisabled = count === 1;
+  const dispatch = useDispatch();
 
+  const handleShowPopUp = () => {
+    dispatch(showPopup());
+  };
   return (
     <div>
       <div className="border rounded-lg border-gray-400 container w-80 h-fit p-4 border-opacity-30 bg-white ">
@@ -55,14 +57,12 @@ const ReserveTicketCard = () => {
           </div>
         </div>
         <div>
-          <button className=" text-white btn-primary bg-orange-500 hover:bg-orange-600 btn-block p-1 rounded-md" onClick={reserveTicket}>
+          <button className=" text-white btn-primary bg-orange-500 hover:bg-orange-600 btn-block p-1 rounded-md" onClick={handleShowPopUp}>
             Reserve a spot
           </button>
         </div>
       </div>
-      <div className={`${popUp ? "" : "hidden"}`}>
         <ReserveTicketPopup />
-      </div>
     </div>
   );
 };
