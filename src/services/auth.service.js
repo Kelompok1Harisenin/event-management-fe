@@ -10,6 +10,17 @@ const authService = {
     const response = await axios("POST", "/auth/login", data);
     return response;
   },
+
+  register: async (params) => {
+    const data = {
+      name: params.name,
+      email: params.email,
+      password: params.password,
+    };
+    const response = await axios("POST", "/auth/register", data);
+    return response;
+  },
+
   logout: async (refreshToken) => {
     const headers = {
       Authorization: JSON.parse(Cookies.get("accessToken")),
