@@ -63,7 +63,7 @@ You may also see any lint errors in the console.
     - **pages/** pages folder
     - **redux/** global state management folder
     - **routes/** routes folder
-    - **services/** API services folder
+    - **services/** services folder
     - **utils/** utility helper functions folder
     - **App.jsx** main _.jsx_ App
     - **main.jsx** main root _.jsx_

@@ -72,45 +72,15 @@ const EventDetails = () => {
                 inventore officia minus? Eveniet, quia aperiam. Repudiandae aut
                 tempora, sed doloremque impedit a numquam obcaecati,
                 voluptatibus unde officia veritatis id necessitatibus delectus
-                modi, praesentium pariatur velit? Beatae iusto assumenda
-                accusantium voluptatibus explicabo iste quas iure. Recusandae
-                cumque velit voluptatum excepturi iure nesciunt vitae itaque
-                maiores alias repellat quod maxime, modi non accusamus ipsa
-                fugiat dicta delectus. Vel unde vero maxime aspernatur ut,
-                eveniet fuga repellat distinctio eum odio. Reiciendis veniam et
-                cupiditate quae, cumque aliquam id tenetur voluptas voluptate
-                numquam, illo vero quaerat libero quidem ut quo ratione dolor,
-                quis officiis dignissimos voluptatibus distinctio suscipit optio
-                eligendi. Ipsa ratione id odio vero tempora facere. Molestiae
-                modi magnam sequi id nostrum. Similique debitis, eveniet error
-                sint consectetur magni deleniti ab officiis, ad nobis voluptatum
-                dolor ipsa quis vero impedit minima, officia et aspernatur
-                praesentium cum blanditiis eos at. Sunt aperiam temporibus cum
-                eaque, qui minima autem tenetur aspernatur omnis animi
-                consequatur. Officia, unde numquam? Ad vel voluptas nobis.
-                Tempora modi molestias eligendi, ratione nemo nesciunt sequi
-                quae, incidunt rerum perferendis qui corrupti vel facere
-                cupiditate laudantium aliquid soluta accusamus quasi hic nam
-                harum quibusdam voluptatem? Beatae temporibus nemo, maxime neque
-                blanditiis repudiandae illo facilis explicabo numquam iusto
-                voluptatum sit modi debitis dolorum nisi totam, deserunt
-                incidunt voluptas magni placeat nihil. Eveniet obcaecati rerum
-                ab modi totam saepe dolorum ducimus vel beatae at! Ut explicabo
-                modi laborum, aut repellat libero consequatur possimus mollitia
-                molestias impedit quam minus asperiores molestiae earum aliquam
-                culpa ex incidunt veniam nobis dicta at. Vitae nobis voluptatum
-                sunt enim aliquid. Nemo nostrum ex, harum eligendi qui officia
-                sed ratione voluptas! Eligendi animi, hic, rem corrupti et quae
-                excepturi quod, dolores neque eveniet totam quisquam! Ducimus
-                odio tempore, neque quidem, quod aliquam quisquam dolores ad
-                minus et blanditiis, cupiditate suscipit laboriosam? Vitae
-                laborum consequuntur vel!
+                modif.
               </p>
             </div>
           </section>
         </main>
         <aside className="sticky top-0 h-96 max-lg:h-auto">
-          <ReserveTicketCard />
+          <div className="mt-20">
+            <ReserveTicketCard />
+          </div>
         </aside>
       </div>
     </div>
