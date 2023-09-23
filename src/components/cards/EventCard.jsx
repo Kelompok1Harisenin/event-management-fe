@@ -5,7 +5,7 @@ const EventCard = (props) => {
   return (
     <div className="grid grid-cols-1 w-full bg-white my-10 cursor-pointer duration-200 delay-150 hover:shadow-2xl hover:delay-200">
       <div className="relative col-span-1 w-full text-left">
-        <img src={props.img} alt="Event Pic" />
+        <img src={props.img} alt="Event Pic" className="w-96 h-52" />
         <div className="absolute w-3/12 -bottom-5 right-0 animate-pulse">
           <Link to="">
             <img src={props.icon} alt="Event Pic" />

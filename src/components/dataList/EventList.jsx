@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxios from "../../hooks/useAxios";
+import { dateUtil } from "./../../utils";
 import { EventCard } from "..";
 
 const EventList = () => {
@@ -10,6 +11,7 @@ const EventList = () => {
     const fetchData = async () => {
       try {
         const endpoint = "/events/";
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const response = await useAxios("get", endpoint);
 
         if (response.statusCode === 200) {
@@ -46,9 +48,9 @@ const EventList = () => {
               icon="/images/like.png"
               img={row.image}
               name={row.title}
-              date={row.startDate}
+              date={dateUtil.formatDateTime(row.startDate)}
               place={row.location}
-              cost={row.price}
+              cost={row.price === 0 ? "Free" : `$${row.price}`}
               org={row.organizer.username}
               note={row.description}
             />
