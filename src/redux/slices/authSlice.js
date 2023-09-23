@@ -10,6 +10,15 @@ export const loginUser = createAsyncThunk("auth/login", async (data) => {
   return response.data;
 });
 
+export const registerUser = createAsyncThunk("auth/register", async (data) => {
+  const response = await authService.register(data);
+  if (response.statusCode >= 400) {
+    const errorMessage = response.error || "An error occurred during register.";
+    throw new Error(errorMessage);
+  }
+  return response.data;
+});
+
 export const logoutUser = createAsyncThunk(
   "auth/logout",
   async (refreshToken) => {
@@ -46,6 +55,17 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(loginUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error?.message;
+      })
+      .addCase(registerUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(registerUser.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.user = action.payload;
+      })
+      .addCase(registerUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error?.message;
       })
