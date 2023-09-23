@@ -10,8 +10,12 @@ import { registerUser } from "../../redux/slices/authSlice";
 
 
 const RegisterForm = () => {
+
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [error, setError] = useState(null);
 
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
@@ -28,30 +32,53 @@ const RegisterForm = () => {
     email: "",
     password: "",
     name: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+
+
   };
+
+
+
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const result = await dispatch(registerUser(formData));
-      if (result.payload) {
-        const tokens = result.payload.tokens;
-        Cookies.set("user", JSON.stringify(result.payload.user));
-        Cookies.set("accessToken", JSON.stringify(tokens.access.token));
-        Cookies.set("refreshToken", JSON.stringify(tokens.refresh.token));
-        navigate("/login");
-      } else {
-        setError(result.error?.message);
+
+
+
+
+      if (formData.password != formData.confirmPassword){
+        alert('password and confirm password do not match!.');
       }
+      else {
+        const result = await dispatch(registerUser(formData));
+
+
+        if (result.payload) {
+          const tokens = result.payload.tokens;
+          Cookies.set("user", JSON.stringify(result.payload.user));
+          alert('your account has been successfully created!.');
+
+          navigate("/login");
+        } else {
+          setError(result.error?.message);
+        }
+      }
+
     } catch (error) {
       setError(error.message);
     }
+
+  };
+
+  const closeErrorPopup = () => {
+    setError(null);
   };
 
 
@@ -120,6 +147,9 @@ const RegisterForm = () => {
             placeholder="Password must be at least 8 characters"
             className="input input-bordered input-warning w-full hover:border-orange-300 hover:border-2 transition duration-200 ease-in-out"
             autoComplete="off"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
 
           />
           <div
@@ -146,6 +176,7 @@ const RegisterForm = () => {
             Already Have an Account?
           </Link>
         </div>
+        {error && <ErrorPopup message={error} onClose={closeErrorPopup} />}
       </form>
     </div>
   );
