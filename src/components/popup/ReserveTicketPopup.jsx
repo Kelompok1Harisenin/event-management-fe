@@ -12,14 +12,14 @@ export default function ReserveTicketPopup() {
 
   return (
     isPopupVisible && (
-      <div id="behind" className="w-full h-full fixed top-0 left-0 bg-black/60 overflow-auto">
+      <div id="behind" className="w-full h-full fixed top-0 left-0 bg-black/60 max-md:overflow-auto">
         <div className="w-5/6 h-4/5 mx-auto mt-24 md:grid md:grid-cols-5">
           <div className="md:col-span-3 bg-white rounded-lg relative z-10 overflow-y-auto">
-            <div className="w-11/12 h-full mx-auto grid grid-rows-8 snap-y">
-              <div className="text-center row-span-1">
+            <div className="w-11/12 h-full mx-auto md:grid md:grid-rows-8 snap-y">
+              <div className="text-center md:row-span-1 max-md:border-double max-md:border-b-4 max-md:border-black/20 my-5">
                 <h1 className="text-3xl my-2">Title</h1>
               </div>
-              <div id="detail" className="row-span-6">
+              <div id="detail" className="md:row-span-6">
                 <div className="md:hidden">
                   <img src="/images/gambar7.png" alt="" className="w-full items-center max-md:mx-auto" />
                 </div>
@@ -38,7 +38,7 @@ export default function ReserveTicketPopup() {
                 </div>
               </div>
             </div>
-            <div className="flex row-span-1 justify-center relative md:bottom-20 max-md:bottom-10">
+            <div className="flex md:row-span-1 justify-center relative md:bottom-20 max-md:bottom-0">
               <button className="btn btn-error" onClick={handleCancel}>
                 Cancel
               </button>
