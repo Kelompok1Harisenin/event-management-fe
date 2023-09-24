@@ -1,4 +1,6 @@
-const HorizontalOrganizerCard = () => {
+import PropTypes from "prop-types";
+
+const HorizontalOrganizerCard = ({ name }) => {
   return (
     <div className="rounded-lg border-2 bg-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between p-3 mb-12">
       <div className="flex items-center md:items-start">
@@ -10,7 +12,7 @@ const HorizontalOrganizerCard = () => {
         <div>
           <div>
             By&nbsp;
-            <span className="font-semibold">Goethe-Institut Indonesian</span>
+            <span className="font-semibold">{name}</span>
           </div>
           <div>1.7k followers</div>
         </div>
@@ -20,6 +22,10 @@ const HorizontalOrganizerCard = () => {
       </button>
     </div>
   );
+};
+
+HorizontalOrganizerCard.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default HorizontalOrganizerCard;
