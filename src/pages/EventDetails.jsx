@@ -1,17 +1,33 @@
 import useAxios from "../hooks/useAxios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { HorizontalOrganizerCard, ReserveTicketCard } from "../components";
+import {
+  HorizontalOrganizerCard,
+  ReserveTicketCard,
+  ReserveTicketPopup,
+  LoadingSpinner,
+} from "../components";
 import { dateUtil } from "./../utils";
 
 const EventDetails = () => {
   const { id } = useParams();
   const [eventDetail, setEventDetail] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const fetchDetail = async () => {
       try {
+        setIsLoading(true);
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const response = await useAxios("GET", `/events/${id}`);
         if (response.statusCode === 200) {
@@ -25,15 +41,15 @@ const EventDetails = () => {
       } catch (error) {
         console.error("Error fetching data:", error.message);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
     fetchDetail();
   }, [id]);
 
-  if (!eventDetail) {
-    return <div>Loading...</div>;
+  if (!eventDetail && isLoading) {
+    return <LoadingSpinner />;
   }
 
   return (
@@ -62,9 +78,9 @@ const EventDetails = () => {
                 <strong>Type:</strong> {eventDetail.eventType}
               </p>
               <p className=" pt-3">
-                <strong>Place:</strong>{" "}
+                <strong>Location:</strong>{" "}
                 {eventDetail.eventType === "Online"
-                  ? "Zoom Meeting"
+                  ? "Meeting Link"
                   : eventDetail.location}
               </p>
               <br />
@@ -95,7 +111,16 @@ const EventDetails = () => {
         </main>
         <aside className="sticky top-0 h-96 max-lg:h-auto">
           <div className="mt-20">
-            <ReserveTicketCard price={eventDetail.price} />
+            <ReserveTicketCard
+              price={eventDetail.price}
+              onReserveClick={openModal}
+            />
+            {/* <ReserveTicketModal isOpen={isModalOpen} onClose={closeModal} /> */}
+            <ReserveTicketPopup
+              event={eventDetail}
+              isOpen={isModalOpen}
+              onClose={closeModal}
+            />
           </div>
         </aside>
       </div>

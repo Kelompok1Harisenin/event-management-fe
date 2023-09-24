@@ -17,4 +17,7 @@ export { default as EventAttendList } from "./dataList/EventAttendList";
 export { default as FieldError } from "./errors/FieldError";
 export { default as ErrorPopup } from "./errors/ErrorPopup";
 export { default as NotFound } from "./errors/NotFound";
+export { default as ReserveTicketModal } from "./modal/ReserveTicketModal";
+export { default as ReserveTicketPopup } from "./modal/ReserveTicketPopup";
 export { default as ScrollToTopButton } from "./others/ScrollToTopButton";
+export { default as LoadingSpinner } from "./others/LoadingSpinner";

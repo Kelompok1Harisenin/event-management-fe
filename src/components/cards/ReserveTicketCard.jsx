@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { authHelpers } from "../../utils";
 
-const ReserveTicketCard = ({ price }) => {
+const ReserveTicketCard = ({ price, onReserveClick }) => {
   const [count, setCount] = useState(1);
+  const navigate = useNavigate();
+  const isLoggedIn = authHelpers.isAuthenticated();
 
   function decrementCount() {
     setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
@@ -50,7 +54,10 @@ const ReserveTicketCard = ({ price }) => {
         </div>
       </div>
       <div>
-        <button className=" text-white btn-primary bg-orange-500 hover:bg-orange-600 btn-block p-1 rounded-md">
+        <button
+          onClick={() => (isLoggedIn ? onReserveClick() : navigate("/login"))}
+          className=" text-white btn-primary bg-orange-500 hover:bg-orange-600 btn-block p-1 rounded-md"
+        >
           Reserve a spot
         </button>
       </div>
