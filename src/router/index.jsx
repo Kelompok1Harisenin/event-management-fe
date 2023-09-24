@@ -18,7 +18,7 @@ const RootRouter = () => {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="event-details" element={<EventDetails />} />
+        <Route path="event/:id" element={<EventDetails />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

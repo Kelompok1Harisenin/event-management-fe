@@ -15,7 +15,6 @@ const EventList = () => {
         const response = await useAxios("get", endpoint);
 
         if (response.statusCode === 200) {
-          console.log("Data from server:", response.data);
           setEventListData(response.data);
         } else {
           console.error(
@@ -45,11 +44,13 @@ const EventList = () => {
           {eventListData.map((row) => (
             <EventCard
               key={row.id}
+              id={row.id}
               icon="/images/like.png"
               img={row.image}
               name={row.title}
               date={dateUtil.formatDateTime(row.startDate)}
               place={row.location}
+              type={row.eventType}
               cost={row.price === 0 ? "Free" : `$${row.price}`}
               org={row.organizer.username}
               note={row.description}

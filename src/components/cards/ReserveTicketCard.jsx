@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
-const ReserveTicketCard = () => {
+const ReserveTicketCard = ({ price }) => {
   const [count, setCount] = useState(1);
 
   function decrementCount() {
@@ -27,7 +28,7 @@ const ReserveTicketCard = () => {
           <div>
             <p>General Admission</p>
           </div>
-          <div>
+          {/* <div>
             <button
               onClick={decrementCount}
               className={decrementButtonColor}
@@ -42,10 +43,10 @@ const ReserveTicketCard = () => {
             >
               +
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="flex">
-          <p>Free</p>
+          <p>{price === 0 ? "Free" : `$${price}`}</p>
         </div>
       </div>
       <div>
@@ -55,6 +56,10 @@ const ReserveTicketCard = () => {
       </div>
     </div>
   );
+};
+
+ReserveTicketCard.propTypes = {
+  price: PropTypes.string.isRequired,
 };
 
 export default ReserveTicketCard;
