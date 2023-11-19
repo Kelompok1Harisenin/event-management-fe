@@ -1,7 +1,24 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import firebase from "./../../config/firebase";
 
 const EventCard = (props) => {
+  useEffect(() => {
+    const eventTrace = firebase.perfTrace(`event_card_render_${props.id}`);
+
+    const startTime = Date.now();
+
+    eventTrace.start();
+
+    return () => {
+      eventTrace.stop();
+
+      // Calculate the duration and add it as a metric
+      const duration = Date.now() - startTime;
+      eventTrace.putMetric("event_render_duration", duration);
+    };
+  }, [props.id]);
   return (
     <Link to={`/event/${props.id}`}>
       <div className="grid grid-cols-1 w-full border rounded-md bg-white my-10 cursor-pointer duration-200 delay-150 hover:shadow-2xl hover:delay-200">

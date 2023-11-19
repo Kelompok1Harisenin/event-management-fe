@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "./../../redux/slices/authSlice";
@@ -6,6 +6,7 @@ import { ErrorPopup } from "./../../components";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
+import firebase from "./../../config/firebase";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,15 @@ const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const loginFormTrace = firebase.perfTrace("login_form_render");
+    loginFormTrace.start();
+
+    return () => {
+      loginFormTrace.stop();
+    };
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -26,6 +36,8 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
+      const loginTrace = firebase.perfTrace("login_button_click");
+      loginTrace.start();
       const result = await dispatch(loginUser(formData));
       if (result.payload) {
         const tokens = result.payload.tokens;
@@ -36,6 +48,8 @@ const LoginForm = () => {
       } else {
         setError(result.error?.message);
       }
+
+      loginTrace.stop();
     } catch (error) {
       setError(error.message);
     }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import { dateUtil } from "./../../utils";
 import { EventCard, LoadingSpinner } from "./../../components";
+import firebase from "./../../config/firebase";
 
 const EventList = () => {
   const [eventListData, setEventListData] = useState([]);
@@ -9,11 +10,14 @@ const EventList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const eventTrace = firebase.perfTrace("event_list_component");
       try {
         setIsLoading(true);
         const endpoint = "/events/";
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const response = await useAxios("get", endpoint);
+
+        eventTrace.start();
 
         if (response.statusCode === 200) {
           setEventListData(response.data);
@@ -27,6 +31,7 @@ const EventList = () => {
         console.error("Error fetching data:", error.message);
       } finally {
         setIsLoading(false);
+        eventTrace.stop();
       }
     };
 
